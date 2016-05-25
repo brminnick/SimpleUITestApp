@@ -20,7 +20,7 @@ namespace SimpleUITestApp.UITests
 		public FirstPage(IApp app, Platform platform) : base(app, platform)
 		{
 			//Always initialize your UITest queries using "x.Marked" and referencing the UI ID
-			//In Xamarin.Forms, you set the UI ID by setting the control's "StyleID"
+			//In Xamarin.Forms, you set the UI ID by setting the control's "AutomationId"
 			//In Xamarin.Android, you set the UI ID by setting the control's "ContentDescription"
 			//In Xamarin.iOS, you set the UI ID by setting the control's "AccessibilityIdentifiers"
 			GoButtonUsingID = x => x.Marked("MyGoButton");
