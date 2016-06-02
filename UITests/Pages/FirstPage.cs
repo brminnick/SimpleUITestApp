@@ -30,22 +30,21 @@ namespace SimpleUITestApp.UITests
 			ListViewButtonUsingID = x => x.Marked("MyListViewButton");
 			ActivityIndicatorUsingID = x => x.Marked("MyActivityIndicator");
 
-			//Below shows the improper way to initalize queries
+			//Below shows the improper way to initalize queries.
 			//This code would break if a developer added a third button...
 			//...to the screen and placed it above the "Go Button", because...
-			//...the Go Button would then become Index(1) and the ListViewButton...
-			//...would then become Index(2)
+			//...the Go Button and the ListViewButton Index would change.
 			if (OnAndroid)
 			{
-				GoButton = x => x.Class("Button").Index(0);
+				GoButton = x => x.Class("AppCompatButton").Index(0);
 				EntryField = x => x.Class("EntryEditText");
-				ListViewButton = x => x.Class("Button").Index(1);
+				ListViewButton = x => x.Class("AppCompatButton").Index(1);
 			}
 			if (OniOS)
 			{
-				GoButton = x => x.Class("UIButton").Index(0);
+				GoButton = x => x.Class("UIButton").Index(1);
 				EntryField = x => x.Class("UITextField");
-				ListViewButton = x => x.Class("UIButton").Index(1);
+				ListViewButton = x => x.Class("UIButton").Index(0);
 			}
 		}
 
@@ -55,6 +54,7 @@ namespace SimpleUITestApp.UITests
 			app.ClearText();
 			app.ClearText();
 			app.EnterText(text);
+			app.DismissKeyboard();
 			app.Screenshot($"Enter Text, \"{text}\"");
 		}
 
@@ -64,6 +64,7 @@ namespace SimpleUITestApp.UITests
 			app.ClearText();
 			app.ClearText();
 			app.EnterText(text);
+			app.DismissKeyboard();
 			app.Screenshot($"Enter Text Using IDs, \"{text}\"");
 		}
 
