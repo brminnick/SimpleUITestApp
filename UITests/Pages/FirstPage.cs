@@ -1,7 +1,6 @@
 ﻿using Xamarin.UITest;
 
 using Query = System.Func<Xamarin.UITest.Queries.AppQuery, Xamarin.UITest.Queries.AppQuery>;
-using NUnit.Framework;
 
 namespace SimpleUITestApp.UITests
 {
@@ -40,7 +39,7 @@ namespace SimpleUITestApp.UITests
 				EntryField = x => x.Class("EntryEditText");
 				ListViewButton = x => x.Class("AppCompatButton").Index(1);
 			}
-			if (OniOS)
+			else if (OniOS)
 			{
 				GoButton = x => x.Class("UIButton").Index(1);
 				EntryField = x => x.Class("UITextField");
@@ -113,13 +112,19 @@ namespace SimpleUITestApp.UITests
 		public string GetEntryFieldText()
 		{
 			var entryFieldQuery = app.Query(EntryField);
-			return entryFieldQuery[0].Text;
+			return entryFieldQuery[0]?.Text;
 		}
 
 		public string GetEntryFieldTextByID()
 		{
 			var entryFieldQuery = app.Query(EntryFieldUsingID);
-			return entryFieldQuery[0].Text;
+			return entryFieldQuery[0]?.Text;
+		}
+
+		public string GetTitle()
+		{
+			var titleQuery = app.Query("First Page");
+			return titleQuery[0]?.Text;
 		}
 	}
 }
