@@ -38,15 +38,25 @@ namespace SimpleUITestApp.UITests
 		[Test]
 		public void SelectItemOnListView()
 		{
+			var listItemNumber = 9;
+			var expectedAlertString = $"You Selected Number {listItemNumber}";
+
 			FirstPage.ClickListViewButton();
-			ListViewPage.TapListItemNumber(9);
+			ListViewPage.TapListItemNumber(listItemNumber);
+
+			Assert.AreEqual(expectedAlertString, ListViewPage.GetAlertText(listItemNumber));
 		}
 
 		[Test]
 		public void SelectItemOnListViewByID()
 		{
+			var listItemNumber = 9;
+			var expectedAlertString = $"You Selected Number {listItemNumber}";
+
 			FirstPage.ClickListViewButtonByID();
-			ListViewPage.TapListItemNumber(9);
+			ListViewPage.TapListItemNumber(listItemNumber);
+
+			Assert.AreEqual(expectedAlertString, ListViewPage.GetAlertText(listItemNumber));
 		}
 
 		[Test]
