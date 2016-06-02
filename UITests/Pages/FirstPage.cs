@@ -1,6 +1,7 @@
 ﻿using Xamarin.UITest;
 
 using Query = System.Func<Xamarin.UITest.Queries.AppQuery, Xamarin.UITest.Queries.AppQuery>;
+using NUnit.Framework;
 
 namespace SimpleUITestApp.UITests
 {
@@ -106,6 +107,18 @@ namespace SimpleUITestApp.UITests
 		{
 			app.SetOrientationPortrait();
 			app.Screenshot("Rotate Device to Portrait");
+		}
+
+		public string GetEntryFieldText()
+		{
+			var entryFieldQuery = app.Query(EntryField);
+			return entryFieldQuery[0].Text;
+		}
+
+		public string GetEntryFieldTextByID()
+		{
+			var entryFieldQuery = app.Query(EntryFieldUsingID);
+			return entryFieldQuery[0].Text;
 		}
 	}
 }

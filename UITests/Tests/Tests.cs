@@ -14,17 +14,25 @@ namespace SimpleUITestApp.UITests
 		[Test]
 		public void EnterText()
 		{
-			FirstPage.EnterText("Hello World");
+			var textInput = "Hello World";
+
+			FirstPage.EnterText(textInput);
 			FirstPage.ClickGo();
 			FirstPage.WaitForNoActivityIndicator();
+
+			Assert.AreEqual(FirstPage.GetEntryFieldText(), textInput);
 		}
 
 		[Test]
 		public void EnterTextByID()
 		{
-			FirstPage.EnterTextByID("I used IDs to Enter this Text!");
+			var textInput = "I used IDs to Enter this Text!";
+
+			FirstPage.EnterTextByID(textInput);
 			FirstPage.ClickGoByID();
 			FirstPage.WaitForNoActivityIndicator();
+
+			Assert.AreEqual(FirstPage.GetEntryFieldTextByID(), textInput);
 		}
 
 		[Test]
@@ -44,14 +52,22 @@ namespace SimpleUITestApp.UITests
 		[Test]
 		public void RotateScreenAndEnterTextByID()
 		{
+			var entryTextLandcape = "The Screen Orientation Is Landscape";
+			var entryTextPortrait = "The Screen Orientation Is Portrait";
+
 			FirstPage.RotateScreenToLandscape();
-			FirstPage.EnterText("The Screen Orientation Is Landscape");
+			FirstPage.EnterText(entryTextLandcape);
 			FirstPage.ClickGoByID();
 			FirstPage.WaitForNoActivityIndicator();
+
+			Assert.AreEqual(FirstPage.GetEntryFieldTextByID(), entryTextLandcape);
+
 			FirstPage.RotateScreenToPortrait();
-			FirstPage.EnterText("The Screen Orientation Is Portrait");
+			FirstPage.EnterText(entryTextPortrait);
 			FirstPage.ClickGoByID();
 			FirstPage.WaitForNoActivityIndicator();
+
+			Assert.AreEqual(FirstPage.GetEntryFieldTextByID(), entryTextPortrait);
 		}
 	}
 }
