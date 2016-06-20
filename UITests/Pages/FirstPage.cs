@@ -7,8 +7,8 @@ namespace SimpleUITestApp.UITests
 	public class FirstPage : BasePage
 	{
 		protected readonly Query GoButton;
-		protected readonly Query EntryField;
-		protected readonly Query LabelField;
+		protected readonly Query TextEntry;
+		protected readonly Query TextLabel;
 		protected readonly Query ListViewButton;
 
 		protected readonly Query GoButtonUsingID;
@@ -36,20 +36,20 @@ namespace SimpleUITestApp.UITests
 			if (OnAndroid)
 			{
 				GoButton = x => x.Class("AppCompatButton").Index(0);
-				EntryField = x => x.Class("EntryEditText");
+				TextEntry = x => x.Class("EntryEditText");
 				ListViewButton = x => x.Class("AppCompatButton").Index(1);
 			}
 			else if (OniOS)
 			{
 				GoButton = x => x.Class("UIButton").Index(1);
-				EntryField = x => x.Class("UITextField");
+				TextEntry = x => x.Class("UITextField");
 				ListViewButton = x => x.Class("UIButton").Index(0);
 			}
 		}
 
 		public void EnterText(string text)
 		{
-			app.Tap(EntryField);
+			app.Tap(TextEntry);
 			app.ClearText();
 			app.ClearText();
 			app.EnterText(text);
@@ -111,7 +111,7 @@ namespace SimpleUITestApp.UITests
 
 		public string GetEntryFieldText()
 		{
-			var entryFieldQuery = app.Query(EntryField);
+			var entryFieldQuery = app.Query(TextEntry);
 			return entryFieldQuery[0]?.Text;
 		}
 
