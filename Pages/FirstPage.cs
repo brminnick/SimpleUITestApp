@@ -9,8 +9,8 @@ namespace SimpleUITestApp
 {
 	public class FirstPage : ContentPage
 	{
-		Label labelField = new Label();
-		Entry entryField = new Entry();
+		Label textLabel = new Label();
+		Entry textEntry = new Entry();
 		Button goButton = new Button();
 		Button listViewButton = new Button();
 		ActivityIndicator activityIndicator = new ActivityIndicator();
@@ -33,12 +33,12 @@ namespace SimpleUITestApp
 			goButton.AutomationId = "MyGoButton"; // This provides an ID that can be referenced in UITests
 			goButton.Style = buttonStyle; //The formats the BackgroundColor, Border Radius and Height Request Property
 
-			entryField.Placeholder = entryTextPaceHolder;
-			entryField.AutomationId = "MyEntry"; // This provides an ID that can be referenced in UITests
+			textEntry.Placeholder = entryTextPaceHolder;
+			textEntry.AutomationId = "MyEntry"; // This provides an ID that can be referenced in UITests
 
-			labelField.Text = "Your text will appear here";
-			labelField.AutomationId = "MyLabel"; // This provides an ID that can be referenced in UITests
-			labelField.HorizontalOptions = LayoutOptions.Center;
+			textLabel.Text = "Your text will appear here";
+			textLabel.AutomationId = "MyLabel"; // This provides an ID that can be referenced in UITests
+			textLabel.HorizontalOptions = LayoutOptions.Center;
 
 			goButton.Clicked += OnButtonClick;
 
@@ -60,10 +60,10 @@ namespace SimpleUITestApp
 			var stackLayout = new StackLayout
 			{
 				Children = {
-					entryField,
+					textEntry,
 					goButton,
 					activityIndicator,
-					labelField,
+					textLabel,
 				},
 				VerticalOptions = LayoutOptions.StartAndExpand,
 				HorizontalOptions = LayoutOptions.CenterAndExpand
@@ -111,13 +111,13 @@ namespace SimpleUITestApp
 
 		public async void OnButtonClick(object sender, EventArgs e)
 		{
-			string entryText = entryField.Text;
+			string entryText = textEntry.Text;
 			Insights.Track(Insights_Constants.GO_BUTTON_TAPPED, Insights_Constants.TEXT_ENTERED, entryText);
 
 			Device.BeginInvokeOnMainThread(() =>
 			{
 				//Hide the keyboard
-				entryField.Unfocus();
+				textEntry.Unfocus();
 
 				//Show the activity indicator and hide the Go Button
 				activityIndicator.IsRunning = true;
@@ -140,7 +140,7 @@ namespace SimpleUITestApp
 				goButton.IsEnabled = true;
 
 				//display the 
-				labelField.Text = entryText;
+				textLabel.Text = entryText;
 			});
 		}
 
