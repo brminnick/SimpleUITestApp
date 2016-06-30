@@ -1,4 +1,6 @@
-﻿using Xamarin.UITest;
+﻿using System.Security.Permissions;
+
+using Xamarin.UITest;
 
 using Query = System.Func<Xamarin.UITest.Queries.AppQuery, Xamarin.UITest.Queries.AppQuery>;
 
@@ -12,8 +14,8 @@ namespace SimpleUITestApp.UITests
 		protected readonly Query ListViewButton;
 
 		protected readonly Query GoButtonUsingID;
-		protected readonly Query EntryFieldUsingID;
-		protected readonly Query LabelFieldUsingID;
+		protected readonly Query TextEntryUsingID;
+		protected readonly Query TextLabelUsingID;
 		protected readonly Query ListViewButtonUsingID;
 		protected readonly Query ActivityIndicatorUsingID;
 
@@ -24,8 +26,8 @@ namespace SimpleUITestApp.UITests
 			//In Xamarin.Android, you set the UI ID by setting the control's "ContentDescription"
 			//In Xamarin.iOS, you set the UI ID by setting the control's "AccessibilityIdentifiers"
 			GoButtonUsingID = x => x.Marked("MyGoButton");
-			EntryFieldUsingID = x => x.Marked("MyEntry");
-			LabelFieldUsingID = x => x.Marked("MyLabel");
+			TextEntryUsingID = x => x.Marked("MyEntry");
+			TextLabelUsingID = x => x.Marked("MyLabel");
 			ListViewButtonUsingID = x => x.Marked("MyListViewButton");
 			ActivityIndicatorUsingID = x => x.Marked("MyActivityIndicator");
 
@@ -59,7 +61,7 @@ namespace SimpleUITestApp.UITests
 
 		public void EnterTextByID(string text)
 		{
-			app.Tap(EntryFieldUsingID);
+			app.Tap(TextEntryUsingID);
 			app.ClearText();
 			app.ClearText();
 			app.EnterText(text);
@@ -117,7 +119,7 @@ namespace SimpleUITestApp.UITests
 
 		public string GetEntryFieldTextByID()
 		{
-			var entryFieldQuery = app.Query(EntryFieldUsingID);
+			var entryFieldQuery = app.Query(TextEntryUsingID);
 			return entryFieldQuery[0]?.Text;
 		}
 
