@@ -41,6 +41,7 @@ namespace SimpleUITestApp
 			listViewButton.Style = StyleConstants.BorderedButton; //The formats the BackgroundColor, Border Radius and Height Request Property
 
 			activityIndicator.AutomationId = "MyActivityIndicator";
+			activityIndicator.Color = Color.White;
 
 			listViewButton.Clicked += (sender, e) =>
 			{
@@ -111,6 +112,7 @@ namespace SimpleUITestApp
 				textEntry.Unfocus();
 
 				//Show the activity indicator and hide the Go Button
+
 				activityIndicator.IsRunning = true;
 				activityIndicator.IsVisible = true;
 				goButton.IsVisible = false;

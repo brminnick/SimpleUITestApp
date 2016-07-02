@@ -12,7 +12,7 @@ namespace SimpleUITestApp
 		public static bool IsLoggedIn;
 		public static string UserName;
 
-		public NavigationPage Navigation;
+		public static NavigationPage Navigation;
 
 		public App ()
 		{

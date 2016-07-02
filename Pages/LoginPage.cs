@@ -62,7 +62,7 @@ namespace SimpleUITestApp
 				}
 			}
 			else {
-				var signUp = await DisplayAlert("Invalid Login", "Sorry, we didn't recoginize the username or password. Feel free to sign up for free if you haven't!", "Sign-up", "Try again");
+				var signUp = await DisplayAlert("Invalid Login", "Sorry, we didn't recoginize the username or password. Feel free to sign up for free if you haven't!", "Sign up", "Try again");
 
 				if (signUp)
 				{

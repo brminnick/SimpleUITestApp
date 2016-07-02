@@ -27,6 +27,7 @@ namespace SimpleUITestApp.Droid
 		public static void UpdateIdValues()
 		{
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::SimpleUITestApp.Droid.Resource.Attribute.actionBarSize;
+			global::Splat.Resource.String.library_name = global::SimpleUITestApp.Droid.Resource.String.library_name;
 		}
 		
 		public partial class Animation
@@ -3024,6 +3025,9 @@ namespace SimpleUITestApp.Droid
 			
 			// aapt resource value: 0x7f080011
 			public const int character_counter_pattern = 2131230737;
+			
+			// aapt resource value: 0x7f080026
+			public const int library_name = 2131230758;
 			
 			// aapt resource value: 0x7f080000
 			public const int mr_button_content_description = 2131230720;

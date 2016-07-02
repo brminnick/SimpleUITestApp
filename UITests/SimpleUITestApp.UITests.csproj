@@ -12,7 +12,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
+    <Optimize>true</Optimize>
     <OutputPath>bin\Debug</OutputPath>
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -20,7 +20,7 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>full</DebugType>
+    <DebugType></DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
@@ -53,12 +53,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppInitializer.cs" />
-    <Compile Include="Tests\Tests.cs" />
-    <Compile Include="Tests\AbstractSetup.cs" />
+    <Compile Include="Tests\TestsAfterLoginScreen.cs" />
+    <Compile Include="Tests\BaseTest.cs" />
     <Compile Include="Tests\ReplTest.cs" />
     <Compile Include="Pages\BasePage.cs" />
     <Compile Include="Pages\FirstPage.cs" />
     <Compile Include="Pages\ListViewPage.cs" />
+    <Compile Include="Pages\LoginPage.cs" />
+    <Compile Include="Pages\NewUserSignUpPage.cs" />
+    <Compile Include="Tests\LoginTests.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
