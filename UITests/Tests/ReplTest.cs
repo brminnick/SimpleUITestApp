@@ -15,7 +15,6 @@ namespace SimpleUITestApp.UITests
 		public void Repl()
 		{
 			app.Repl ();
-
 		}
 	}
 }

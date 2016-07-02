@@ -6,7 +6,7 @@ using Xamarin;
 
 namespace SimpleUITestApp
 {
-	public class ListViewPage : ContentPage
+	public class ListViewPage : BasePage
 	{
 		public ListViewPage()
 		{

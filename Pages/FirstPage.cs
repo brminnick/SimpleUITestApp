@@ -7,7 +7,7 @@ using Xamarin;
 
 namespace SimpleUITestApp
 {
-	public class FirstPage : ContentPage
+	public class FirstPage : BasePage
 	{
 		Label textLabel = new Label();
 		Entry textEntry = new Entry();
@@ -19,32 +19,26 @@ namespace SimpleUITestApp
 		{
 			Title = "First Page";
 
-			var buttonStyle = new Style(typeof(Button))
-			{
-				Setters = {
-					new Setter { Property = Button.FontAttributesProperty, Value = FontAttributes.Bold },
-					new Setter { Property = Button.BorderRadiusProperty, Value = 7 }
-				}
-			};
-
 			string entryTextPaceHolder = "Enter text and click 'Go'";
 
 			goButton.Text = "Go";
 			goButton.AutomationId = "MyGoButton"; // This provides an ID that can be referenced in UITests
-			goButton.Style = buttonStyle; //The formats the BackgroundColor, Border Radius and Height Request Property
+			goButton.Style = StyleConstants.BorderedButton; //The formats the BackgroundColor, Border Radius and Height Request Property
 
 			textEntry.Placeholder = entryTextPaceHolder;
 			textEntry.AutomationId = "MyEntry"; // This provides an ID that can be referenced in UITests
+			textEntry.Style = StyleConstants.UnderlinedEntry;
 
 			textLabel.Text = "Your text will appear here";
 			textLabel.AutomationId = "MyLabel"; // This provides an ID that can be referenced in UITests
 			textLabel.HorizontalOptions = LayoutOptions.Center;
+			textLabel.Style = StyleConstants.WhiteTextLabel;
 
 			goButton.Clicked += OnButtonClick;
 
 			listViewButton.Text = "Go to List View Page";
 			listViewButton.AutomationId = "MyListViewButton"; // This provides an ID that can be referenced in UITests
-			listViewButton.Style = buttonStyle; //The formats the BackgroundColor, Border Radius and Height Request Property
+			listViewButton.Style = StyleConstants.BorderedButton; //The formats the BackgroundColor, Border Radius and Height Request Property
 
 			activityIndicator.AutomationId = "MyActivityIndicator";
 
@@ -95,10 +89,7 @@ namespace SimpleUITestApp
 				{
 					return parent.X;
 				}),
-				Constraint.RelativeToView(stackLayout, (parent, view) =>
-				{
-					return parent.Height - view.Height + 10;
-				}),
+				Constraint.Constant(250),
 				Constraint.RelativeToParent((parent) =>
 				{
 					return parent.Width - 20;
