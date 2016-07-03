@@ -1,6 +1,11 @@
-﻿using Android.App;
+﻿using Android.OS;
+using Android.App;
+using Android.Views;
 using Android.Content.PM;
-using Android.OS;
+
+using Akavache;
+
+using Java.Interop;
 
 namespace SimpleUITestApp.Droid
 {
@@ -21,7 +26,19 @@ namespace SimpleUITestApp.Droid
 				}
 			};
 
+			BlobCache.ApplicationName = "SimpleUITestApp";
+			BlobCache.EnsureInitialized();
+
+			Window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
+
 			LoadApplication (new App ());
+		}
+
+		[Export("BypassLoginScreen")]
+		public async void BypassLoginScree()
+		{
+			await App.Navigation.PopToRootAsync();
+			await App.Navigation.PushAsync(new FirstPage(), false);
 		}
 	}
 }
