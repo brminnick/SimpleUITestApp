@@ -37,6 +37,8 @@ namespace MyLoginUI.Pages
 		Label logoSlogan, rememberMe;
 		Switch saveUsername;
 
+		double _relativeLayoutPadding = 10;
+
 		bool isInitialized = false;
 
 		#endregion
@@ -116,7 +118,6 @@ namespace MyLoginUI.Pages
 
 			loginButton.Clicked += (object sender, EventArgs e) =>
 			{
-				if (String.IsNullOrEmpty(loginEntry.Text) || String.IsNullOrEmpty(passwordEntry.Text))
 				{
 					DisplayAlert("Error", "You must enter a username and password.", "Okay");
 					return;
@@ -153,48 +154,40 @@ namespace MyLoginUI.Pages
 			layout.Children.Add(
 				logoSlogan,
 				xConstraint: Constraint.RelativeToParent(p => (p.Width / 2) - (getLogoSloganWidth(p) / 2)),
-				yConstraint: Constraint.RelativeToView(logo, (p, v) => 250 - (p.Height * 0.3) + v.Height)
 			);
 
 			layout.Children.Add(
 				loginEntry,
 				xConstraint: Constraint.Constant(40),
-				yConstraint: Constraint.RelativeToParent(p => p.Height * 0.4),
 				widthConstraint: Constraint.RelativeToParent(p => p.Width - 80)
 			);
 			layout.Children.Add(
 				passwordEntry,
 				xConstraint: Constraint.Constant(40),
-				yConstraint: Constraint.RelativeToView(loginEntry, (p, v) => v.Y + v.Height + 10),
 				widthConstraint: Constraint.RelativeToParent(p => p.Width - 80)
 			);
 
 			layout.Children.Add(
 				rememberMe,
 				xConstraint: Constraint.RelativeToParent(p => p.Width - 40 - getSwitchWidth(p) - getRememberMeWidth(p) - 20),
-				yConstraint: Constraint.RelativeToView(passwordEntry, (p, v) => v.Y + v.Height + 25 + getRememberMeHeight(p) / 2)
 			);
 			layout.Children.Add(
 				saveUsername,
 				xConstraint: Constraint.RelativeToParent(p => p.Width - 40 - getSwitchWidth(p)),
-				yConstraint: Constraint.RelativeToView(passwordEntry, (p, v) => v.Y + v.Height + 25)
 			);
 
 			layout.Children.Add(
 				loginButton,
 				xConstraint: Constraint.Constant(40),
-				yConstraint: Constraint.RelativeToView(saveUsername, (p, v) => v.Y + v.Height + 25),
 				widthConstraint: Constraint.RelativeToParent(p => p.Width - 80)
 			);
 			layout.Children.Add(
 				forgotPasswordButton,
 				xConstraint: Constraint.RelativeToParent(p => (p.Width / 2) - (getForgotButtonWidth(p) / 2)),
-				yConstraint: Constraint.RelativeToParent(p => p.Height - 50)
 			);
 			layout.Children.Add(
 				newUserSignUpButton,
 				xConstraint: Constraint.RelativeToParent(p => (p.Width / 2) - (getNewUserButtonWidth(p) / 2)),
-				yConstraint: Constraint.RelativeToView(forgotPasswordButton, (p, v) => v.Y - v.Height)
 			);
 		}
 
