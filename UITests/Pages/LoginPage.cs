@@ -97,5 +97,10 @@ namespace SimpleUITestApp.UITests
 			app.Tap("Okay");
 			app.Screenshot("Tapped Okay on Error Dialog");
 		}
+
+        public void WaitForLoginScreen()
+        {
+            app.WaitForElement(LoginButton);
+        }
 	}
 }

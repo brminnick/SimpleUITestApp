@@ -16,6 +16,8 @@ namespace SimpleUITestApp.UITests
 		{
 			base.BeforeEachTest();
 
+            LoginPage.WaitForLoginScreen();
+
 			if (app is Xamarin.UITest.iOS.iOSApp)
 				app.Invoke("bypassLoginScreen:", "");
 			else
