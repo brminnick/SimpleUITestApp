@@ -21,12 +21,7 @@ namespace SimpleUITestApp.Droid
 
         public async Task<bool> SetPasswordForUsername(string username, string password)
         {
-            //			byte[] bytes = new byte[username.Length * sizeof(char)];
-            //			System.Buffer.BlockCopy(username.ToCharArray(), 0, bytes, 0, bytes.Length);
             await BlobCache.UserAccount.InsertObject("username", username);
-
-            //			bytes = new byte[password.Length * sizeof(char)];
-            //			System.Buffer.BlockCopy(password.ToCharArray(), 0, bytes, 0, bytes.Length);
             await BlobCache.UserAccount.InsertObject("password", password);
 
             return true;

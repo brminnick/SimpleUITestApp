@@ -54,21 +54,18 @@ namespace SimpleUITestApp.UITests
 
 		public void PressSignUpButton()
 		{
-			app.ScrollTo("Sign-up");
 			app.Tap(SignUpButton);
 			app.Screenshot("Tapped Sign Up Button");
 		}
 
 		public void PressForgotPasswordButton()
 		{
-			app.ScrollTo("Forgot Password?");
 			app.Tap(ForgotPasswordButton);
 			app.Screenshot("Tapped Forgot Password Button");
 		}
 
 		public void PressLoginButton()
 		{
-			app.ScrollTo("Login");
 			app.Tap(LoginButton);
 			app.Screenshot("Tapped Login Button");
 		}

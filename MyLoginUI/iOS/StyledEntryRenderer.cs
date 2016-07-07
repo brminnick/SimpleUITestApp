@@ -11,11 +11,11 @@ using CoreAnimation;
 using CoreGraphics;
 using Foundation;
 
-[assembly: ExportRenderer(typeof(LoginEntry), typeof(LoginEntryRenderer))]
+[assembly: ExportRenderer(typeof(StyledEntry), typeof(StyledEntryRenderer))]
 
 namespace MyLoginUI.iOS.Renderers
 {
-	public class LoginEntryRenderer : EntryRenderer
+	public class StyledEntryRenderer : EntryRenderer
 	{
 		UITextField nativeTextField;
 		CALayer bottomBorder;
@@ -38,7 +38,7 @@ namespace MyLoginUI.iOS.Renderers
 			base.OnElementChanged (e);
 
 			if (e.NewElement != null && !isInitialized) {
-				var formsEntry = e.NewElement as LoginEntry;
+				var formsEntry = e.NewElement as StyledEntry;
 				nativeTextField = Control as UITextField;
 				nativeTextField.Font = UIFont.FromName ("AppleSDGothicNeo-Light", 18);
 				nativeTextField.TextColor = UIColor.White;

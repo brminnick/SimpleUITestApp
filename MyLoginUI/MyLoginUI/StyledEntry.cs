@@ -1,12 +1,10 @@
-﻿using System;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace MyLoginUI.Views
 {
-	public class LoginEntry : Entry
+	public class StyledEntry : Entry
 	{
-		internal LoginEntry (double opacity = 0)
+		public StyledEntry (double opacity = 0)
 		{
 			BackgroundColor = Color.Transparent;
 			HeightRequest = 40;

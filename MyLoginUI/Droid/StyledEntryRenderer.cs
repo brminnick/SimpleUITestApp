@@ -9,11 +9,11 @@ using MyLoginUI.Droid.Renderers;
 using Android.Widget;
 using Android.Graphics;
 
-[assembly:ExportRenderer(typeof(LoginEntry),typeof(LoginEntryRenderer))]
+[assembly:ExportRenderer(typeof(StyledEntry),typeof(StyledEntryRenderer))]
 
 namespace MyLoginUI.Droid.Renderers
 {
-	public class LoginEntryRenderer : EntryRenderer
+	public class StyledEntryRenderer : EntryRenderer
 	{
 		protected override void OnElementChanged (ElementChangedEventArgs<Entry> e)
 		{

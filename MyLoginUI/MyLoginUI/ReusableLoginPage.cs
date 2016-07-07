@@ -32,8 +32,8 @@ namespace MyLoginUI.Pages
 
 		Image logo;
 		RelativeLayout layout;
-		LoginButton loginButton, newUserSignUpButton, forgotPasswordButton;
-		LoginEntry loginEntry, passwordEntry;
+		StyledButton loginButton, newUserSignUpButton, forgotPasswordButton;
+		StyledEntry loginEntry, passwordEntry;
 		Label logoSlogan, rememberMe;
 		Switch saveUsername;
 
@@ -52,8 +52,9 @@ namespace MyLoginUI.Pages
 			CreateGlobalChildren();
 			AddConstraintsToChildren();
 
-			Content = new ScrollView{
-				Content = layout	
+			Content = new ScrollView
+			{
+				Content = layout
 			};
 		}
 
@@ -62,39 +63,33 @@ namespace MyLoginUI.Pages
 		void CreateGlobalChildren()
 		{
 			logo = new Image();
-			logoSlogan = new Label
+			logoSlogan = new StyledLabel
 			{
 				Opacity = 0,
-				Text = "Delighting Developers.",
-				TextColor = Color.White,
-				FontFamily = Device.OnPlatform(
-					iOS: "AppleSDGothicNeo-Light",
-					Android: "Droid Sans Mono",
-					WinPhone: "Comic Sans MS"),
-				FontSize = 14
+				Text = "Delighting Developers."
 			};
-			loginEntry = new LoginEntry
+			loginEntry = new StyledEntry
 			{
 				AutomationId = "usernameEntry",
 				Placeholder = "Username",
 			};
-			passwordEntry = new LoginEntry
+			passwordEntry = new StyledEntry
 			{
 				AutomationId = "passwordEntry",
 				Placeholder = "Password",
 				IsPassword = true,
 			};
-			loginButton = new LoginButton(Borders.Thin)
+			loginButton = new StyledButton(Borders.Thin)
 			{
 				AutomationId = "loginButton",
 				Text = "Login",
 			};
-			newUserSignUpButton = new LoginButton(Borders.None)
+			newUserSignUpButton = new StyledButton(Borders.None)
 			{
 				AutomationId = "newUserButton",
 				Text = "Sign-up",
 			};
-			forgotPasswordButton = new LoginButton(Borders.None)
+			forgotPasswordButton = new StyledButton(Borders.None)
 			{
 				AutomationId = "forgotPasswordButton",
 				Text = "Forgot Password?",

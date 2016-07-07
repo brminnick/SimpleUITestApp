@@ -31,20 +31,6 @@ namespace SimpleUITestApp
 			}
 		};
 
-		public static Style BasicButton = new Style(typeof(Button))
-		{
-			Setters = {
-				new Setter {
-					Property = Button.BackgroundColorProperty, Value = Color.Transparent
-				},
-				new Setter{
-					Property = Button.TextColorProperty, Value = Color.White
-				},
-				new Setter{
-					Property = Button.FontSizeProperty, Value = 18
-				}
-			}
-		};
 		public static Style BorderedButton = new Style(typeof(Button))
 		{
 			Setters = {

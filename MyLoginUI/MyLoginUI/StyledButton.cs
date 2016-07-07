@@ -4,15 +4,15 @@ using Xamarin.Forms;
 
 namespace MyLoginUI.Views
 {
-    internal enum Borders
+    public enum Borders
     {
         None,
         Thin
     }
 
-	public class LoginButton : Button
+	public class StyledButton : Button
 	{
-		internal LoginButton(Borders border, double opacity = 0)
+		public StyledButton(Borders border, double opacity = 0)
         {
             BackgroundColor = Color.Transparent;
             TextColor = Color.White;

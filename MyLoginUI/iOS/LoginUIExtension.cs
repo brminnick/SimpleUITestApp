@@ -8,7 +8,7 @@ namespace MyLoginUI.iOS
 	{
 		public static void Init()
 		{
-			new LoginEntryRenderer ();
+			new StyledEntryRenderer ();
 		}
 	}
 }

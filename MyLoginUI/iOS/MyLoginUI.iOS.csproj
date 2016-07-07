@@ -99,7 +99,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LoginEntryRenderer.cs" />
+    <Compile Include="StyledEntryRenderer.cs" />
     <Compile Include="LoginUIExtension.cs" />
   </ItemGroup>
   <ItemGroup>

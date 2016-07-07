@@ -2,12 +2,14 @@
 
 using Xamarin.Forms;
 
+using MyLoginUI.Views;
+
 namespace SimpleUITestApp
 {
 	public class NewUserSignUpPage : ContentPage
 	{
-		Button saveUsernameButton, cancelButton;
-		Entry usernameEntry, passwordEntry;
+		StyledButton saveUsernameButton, cancelButton;
+		StyledEntry usernameEntry, passwordEntry;
 		StackLayout layout;
 
 		public NewUserSignUpPage()
@@ -26,16 +28,17 @@ namespace SimpleUITestApp
 				VerticalOptions = LayoutOptions.FillAndExpand,
 			};
 
-			usernameEntry = new Entry
+			usernameEntry = new StyledEntry(1)
 			{
 				Style = StyleConstants.UnderlinedEntry,
 				AutomationId = "newUsernameEntry",
 				Placeholder = "Username",
 				HorizontalOptions = LayoutOptions.Fill,
-				HorizontalTextAlignment = TextAlignment.End
+				HorizontalTextAlignment = TextAlignment.End,
+				PlaceholderColor = Color.FromHex("749FA8")
 			};
 
-			passwordEntry = new Entry
+			passwordEntry = new StyledEntry(1)
 			{
 				Style = StyleConstants.UnderlinedEntry,
 				AutomationId = "newPasswordEntry",
@@ -43,18 +46,19 @@ namespace SimpleUITestApp
 				IsPassword = true,
 				HorizontalOptions = LayoutOptions.Fill,
 				HorizontalTextAlignment = TextAlignment.End,
-				VerticalOptions = LayoutOptions.Fill
+				VerticalOptions = LayoutOptions.Fill,
+				PlaceholderColor = Color.FromHex("749FA8")
 			};
 
-			saveUsernameButton = new Button
+			saveUsernameButton = new StyledButton(Borders.Thin, 1)
 			{
-				Style=StyleConstants.BorderedButton,
+				Style = StyleConstants.BorderedButton,
 				AutomationId = "saveUsernameButton",
 				Text = "Save Username",
 				HorizontalOptions = LayoutOptions.Center,
 				VerticalOptions = LayoutOptions.EndAndExpand
 			};
-			cancelButton = new Button
+			cancelButton = new StyledButton(Borders.Thin, 1)
 			{
 				Style = StyleConstants.BorderedButton,
 				AutomationId = "cancelButton",
@@ -67,9 +71,9 @@ namespace SimpleUITestApp
 			{
 				var success = await DependencyService.Get<ILogin>().SetPasswordForUsername(usernameEntry.Text, passwordEntry.Text);
 				if (success)
-					Navigation.PopModalAsync();
+					await Navigation.PopModalAsync();
 				else
-					DisplayAlert("Error", "You must enter a username and a password", "Okay");
+					await DisplayAlert("Error", "You must enter a username and a password", "Okay");
 			};
 
 			cancelButton.Clicked += (object sender, EventArgs e) =>
@@ -101,7 +105,8 @@ namespace SimpleUITestApp
 			layout.Children.Add(saveUsernameButton);
 			layout.Children.Add(cancelButton);
 
-			Content = new ScrollView{
+			Content = new ScrollView
+			{
 				Content = layout
 			};
 		}
