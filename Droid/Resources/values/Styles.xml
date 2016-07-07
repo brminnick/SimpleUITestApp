@@ -4,6 +4,5 @@
 	</style>
 	<style name="MyTheme.Base" parent="Theme.AppCompat">
 		<item name="windowNoTitle">true</item>
-<!--		<item name="colorPrimaryDark">#2C7797</item> -->
 	</style>
 </resources>
