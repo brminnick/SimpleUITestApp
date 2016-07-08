@@ -87,10 +87,6 @@
     <Reference Include="PLCrashReporterUnifiedBinding">
       <HintPath>..\packages\Xamarin.Insights.1.12.3\lib\Xamarin.iOS10\PLCrashReporterUnifiedBinding.dll</HintPath>
     </Reference>
-    <Reference Include="Calabash">
-      <HintPath>..\packages\Xamarin.TestCloud.Agent.0.19.1\lib\Xamarin.iOS10\Calabash.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Xamarin.Forms.Platform.iOS">
       <HintPath>..\packages\Xamarin.Forms.2.3.0.107\lib\Xamarin.iOS10\Xamarin.Forms.Platform.iOS.dll</HintPath>
       <Private>False</Private>
@@ -105,6 +101,10 @@
     </Reference>
     <Reference Include="Xamarin.Forms.Platform">
       <HintPath>..\packages\Xamarin.Forms.2.3.0.107\lib\Xamarin.iOS10\Xamarin.Forms.Platform.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Calabash">
+      <HintPath>..\packages\Xamarin.TestCloud.Agent.0.19.2\lib\Xamarin.iOS10\Calabash.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
