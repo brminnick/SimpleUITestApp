@@ -39,7 +39,7 @@ namespace SimpleUITestApp.UITests
 			LoginPage.LoginWithUsernamePassword(username, password);
 
 			var actualFirstPageTitle = FirstPage.GetTitle();
-			//Asswer
+			//Assert
 			Assert.AreEqual(expectedFirstPageTitle,actualFirstPageTitle);
 		}
 
@@ -87,7 +87,7 @@ namespace SimpleUITestApp.UITests
 			LoginPage.PressLoginButton();
 			LoginPage.TapOkayOnErrorDialog();
 
-			//Asswert
+			//Assert
 			Assert.IsTrue(app.Query("Login").Length > 0);
 		}
 	}
