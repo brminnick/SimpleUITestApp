@@ -5,7 +5,7 @@ The UITests follow the recommended practice of Page Object testing. In the views
 
 There are two UnitTest projects, one of which uses an [iOS Test Runner](https://developer.xamarin.com/guides/ios/deployment,_testing,_and_metrics/touch.unit/#Running_Your_Tests) to run platform-specific unit tests.
 
-The branch [NoLoginPage](https://github.com/brminnick/SimpleUITestApp/tree/NoLoginPage) contains a simpler version of the app that does not include the login page or any backdoor UITests. 
+The branch, [NoLoginPage](https://github.com/brminnick/SimpleUITestApp/tree/NoLoginPage), contains a simpler version of the app that does not include the login page or any backdoor UITests. 
 
 Author
 ===
