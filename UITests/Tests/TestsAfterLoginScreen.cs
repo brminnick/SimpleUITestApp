@@ -4,11 +4,26 @@ using Xamarin.UITest;
 
 namespace SimpleUITestApp.UITests
 {
-	public class Tests : AbstractSetup
+	[Category ("TestsAfterLoginScreen")]
+	public class TestsAfterLoginScreen : BaseTest
 	{
-		public Tests(Platform platform) : base(platform)
+		public TestsAfterLoginScreen(Platform platform) : base(platform)
 		{
 			this.platform = platform;
+		}
+
+		public override void BeforeEachTest()
+		{
+			base.BeforeEachTest();
+
+            LoginPage.WaitForLoginScreen();
+
+			if (app is Xamarin.UITest.iOS.iOSApp)
+				app.Invoke("bypassLoginScreen:", "");
+			else
+				app.Invoke("BypassLoginScreen");
+
+			app.WaitForElement("First Page");
 		}
 
 		[Test]

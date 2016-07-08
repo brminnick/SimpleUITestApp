@@ -1,6 +1,5 @@
-﻿using System.Security.Permissions;
-
-using Xamarin.UITest;
+﻿using Xamarin.UITest;
+using Xamarin.UITest.Queries;
 
 using Query = System.Func<Xamarin.UITest.Queries.AppQuery, Xamarin.UITest.Queries.AppQuery>;
 
@@ -125,7 +124,16 @@ namespace SimpleUITestApp.UITests
 
 		public string GetTitle()
 		{
-			var titleQuery = app.Query("First Page");
+			var title = "First Page";
+			AppResult[] titleQuery;
+
+			app.WaitForElement(title);
+
+			if(OniOS)
+				titleQuery = app.Query(x=>x.Class("UILabel").Marked("First Page"));
+			else
+				titleQuery = app.Query(x => x.Class("TextView").Marked("First Page"));
+
 			return titleQuery[0]?.Text;
 		}
 	}
