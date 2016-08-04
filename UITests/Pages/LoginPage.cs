@@ -26,7 +26,6 @@ namespace SimpleUITestApp.UITests
 
 		public void LoginWithUsernamePassword(string username, string password)
 		{
-			
 			EnterUsername(username);
 			EnterPassword(password);
 			PressLoginButton();

@@ -26,8 +26,8 @@ namespace SimpleUITestApp.Droid
 		
 		public static void UpdateIdValues()
 		{
-			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::SimpleUITestApp.Droid.Resource.Attribute.actionBarSize;
 			global::Splat.Resource.String.library_name = global::SimpleUITestApp.Droid.Resource.String.library_name;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::SimpleUITestApp.Droid.Resource.Attribute.actionBarSize;
 		}
 		
 		public partial class Animation
