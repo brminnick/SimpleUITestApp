@@ -1,7 +1,5 @@
 ﻿using Xamarin.UITest;
 
-using Query = System.Func<Xamarin.UITest.Queries.AppQuery, Xamarin.UITest.Queries.AppQuery>;
-
 namespace SimpleUITestApp.UITests
 {
 	public class ListViewPage : BasePage
