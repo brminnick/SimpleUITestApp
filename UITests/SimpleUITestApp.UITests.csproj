@@ -50,6 +50,14 @@
       <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
       <Private>False</Private>
     </ProjectReference>
+    <ProjectReference Include="..\MyLoginUI\MyLoginUI\MyLoginUI.csproj">
+      <Project>{6E1B18A4-C150-4627-96FF-741A8AE36F58}</Project>
+      <Name>MyLoginUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleUITestApp.csproj">
+      <Project>{06291122-42A6-4585-AC8C-D481126D1B5D}</Project>
+      <Name>SimpleUITestApp</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppInitializer.cs" />
