@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
+﻿using UIKit;
 using Foundation;
-using UIKit;
+
 using Xamarin.Forms;
 
 namespace SimpleUITestApp.iOS
@@ -11,6 +8,8 @@ namespace SimpleUITestApp.iOS
 	[Register("AppDelegate")]
 	public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
 	{
+		App App;
+
 		public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 		{
 			global::Xamarin.Forms.Forms.Init();
@@ -28,7 +27,7 @@ namespace SimpleUITestApp.iOS
 			Xamarin.Calabash.Start();
 #endif
 
-			LoadApplication(new App());
+			LoadApplication(App = new App());
 
 			return base.FinishedLaunching(app, options);
 		}
@@ -51,9 +50,19 @@ namespace SimpleUITestApp.iOS
 		}
 
 		[Export("bypassLoginScreen:")]
-		public NSString BypassLoginScree(NSString noValue)
+		public NSString BypassLoginScreen(NSString noValue)
 		{
 			App.Navigation.PopAsync();
+			return new NSString();
+		}
+
+		[Export("openListViewPage:")]
+		public NSString OpenListViewPage(NSString noValue)
+		{
+			if (UIDevice.CurrentDevice.CheckSystemVersion(9, 0))
+				App.OpenListViewPageUsingDeepLinking();
+			else
+				App.OpenListViewPageUsingNavigation();
 			return new NSString();
 		}
 #endif
