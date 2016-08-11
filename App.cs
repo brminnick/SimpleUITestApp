@@ -33,6 +33,7 @@ namespace SimpleUITestApp
 		protected override void OnStart()
 		{
 			int majorVersion, minorVersion;
+
 			if(Device.OS == TargetPlatform.iOS)
 			{
 				majorVersion = 9;
@@ -40,8 +41,8 @@ namespace SimpleUITestApp
 			}
 			else
 			{
-				majorVersion = 0;
-				minorVersion = 0;
+				majorVersion = 4;
+				minorVersion = 2;
 			}
 
 			if (DependencyService.Get<IEnvironment>().IsOperatingSystemSupported(majorVersion, minorVersion))
