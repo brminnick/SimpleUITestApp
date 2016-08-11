@@ -47,7 +47,7 @@ namespace SimpleUITestApp
 
 			if (DependencyService.Get<IEnvironment>().IsOperatingSystemSupported(majorVersion, minorVersion))
 			{
-				var listViewPageLink = Extensions.CreateAppLink("List View Page", "Open the List View Page", DeepLinkingIdConstants.ListViewPageId);
+				var listViewPageLink = Extensions.CreateAppLink("List View Page", "Open the List View Page", DeepLinkingIdConstants.ListViewPageId,"icon");
 				AppLinks.RegisterLink(listViewPageLink);
 			}
 		}
