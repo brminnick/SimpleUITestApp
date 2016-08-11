@@ -70,6 +70,8 @@ namespace SimpleUITestApp.UITests
 			else
 				app.Invoke("OpenListViewPage");
 
+			app.Screenshot("Backdoor to List View Page");
+
 			ListViewPage.TapListItemNumber(listItemNumber);
 
 			//Assert
