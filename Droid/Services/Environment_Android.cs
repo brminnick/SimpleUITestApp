@@ -2,6 +2,8 @@
 
 using SimpleUITestApp.Droid;
 
+using System;
+
 using Android.OS;
 
 [assembly: Dependency(typeof(Environment_Android))]
@@ -11,14 +13,23 @@ namespace SimpleUITestApp.Droid
 	{
 		public string GetOperatingSystemVersion()
 		{
-			return Build.VERSION.Sdk;
+			return Build.VERSION.SdkInt.ToString();
 		}
 
 		public bool IsOperatingSystemSupported(int majorVersion, int minorVersion)
 		{
-			var buildSDKInt = Build.VERSION.SdkInt;
-			var buildSDK = Build.VERSION.Sdk;
-			return false;
+			try
+			{
+				int sdkInt;
+				int.TryParse(Build.VERSION.SdkInt.ToString(), out sdkInt);
+
+				return sdkInt >= majorVersion;
+
+			}
+			catch (Exception e)
+			{
+				return false;
+			}
 		}
 	}
 }

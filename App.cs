@@ -38,12 +38,13 @@ namespace SimpleUITestApp
 				majorVersion = 9;
 				minorVersion = 0;
 			}
-			else if(Device.OS == TargetPlatform.Android)
+			else
 			{
-				majorVersion = 23;
+				majorVersion = 0;
 				minorVersion = 0;
 			}
-			if (DependencyService.Get<IEnvironment>().IsOperatingSystemSupported(9, 0))
+
+			if (DependencyService.Get<IEnvironment>().IsOperatingSystemSupported(majorVersion, minorVersion))
 			{
 				var listViewPageLink = Extensions.CreateAppLink("List View Page", "Open the List View Page", DeepLinkingIdConstants.ListViewPageId);
 				AppLinks.RegisterLink(listViewPageLink);
