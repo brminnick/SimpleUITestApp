@@ -80,7 +80,7 @@ namespace SimpleUITestApp
 
 		public void OpenListViewPageUsingDeepLinking()
 		{
-			OnAppLinkRequestReceived(new Uri($"{Extensions.BaseUrl}ListViewPage"));
+			OnAppLinkRequestReceived(new Uri($"{Extensions.BaseUrl}{DeepLinkingIdConstants.ListViewPageId}"));
 		}
 
 		public void OpenListViewPageUsingNavigation()
