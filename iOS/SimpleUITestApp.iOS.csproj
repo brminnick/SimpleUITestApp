@@ -140,6 +140,7 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Services\Login_iOS.cs" />
     <Compile Include="Helpers\KeychainHelpers.cs" />
+    <Compile Include="Services\Environment_iOS.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Insights.1.12.3\build\Xamarin.iOS10\Xamarin.Insights.targets" Condition="Exists('..\packages\Xamarin.Insights.1.12.3\build\Xamarin.iOS10\Xamarin.Insights.targets')" />

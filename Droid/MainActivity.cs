@@ -7,6 +7,8 @@ using Akavache;
 
 using Java.Interop;
 
+using Xamarin.Forms.Platform.Android.AppLinks;
+
 namespace SimpleUITestApp.Droid
 {
     [Activity(Theme = "@style/MyTheme", Label = "SimpleUITestApp", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
@@ -27,6 +29,7 @@ namespace SimpleUITestApp.Droid
                     e.NativeView.ContentDescription = e.View.AutomationId;
                 }
             };
+			AndroidAppLinks.Init(this);
 
             BlobCache.ApplicationName = "SimpleUITestApp";
             BlobCache.EnsureInitialized();

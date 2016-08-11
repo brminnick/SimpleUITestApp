@@ -1,6 +1,8 @@
 ﻿using NUnit.Framework;
 
 using Xamarin.UITest;
+using Xamarin.UITest.iOS;
+using Xamarin.UITest.Android;
 
 namespace SimpleUITestApp.UITests
 {
@@ -64,22 +66,11 @@ namespace SimpleUITestApp.UITests
 			var expectedAlertString = $"You Selected Number {listItemNumber}";
 
 			//Act
-			FirstPage.ClickListViewButton();
-			ListViewPage.TapListItemNumber(listItemNumber);
+			if (app is Xamarin.UITest.iOS.iOSApp)
+				app.Invoke("openListViewPage:", "");
+			else
+				app.Invoke("BypassLoginScreen");
 
-			//Assert
-			Assert.AreEqual(expectedAlertString, ListViewPage.GetAlertText(listItemNumber));
-		}
-
-		[Test]
-		public void SelectItemOnListViewByID()
-		{
-			//Arrange
-			var listItemNumber = 9;
-			var expectedAlertString = $"You Selected Number {listItemNumber}";
-
-			//Act
-			FirstPage.ClickListViewButtonByID();
 			ListViewPage.TapListItemNumber(listItemNumber);
 
 			//Assert
