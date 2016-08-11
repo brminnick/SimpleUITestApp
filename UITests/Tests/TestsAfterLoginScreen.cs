@@ -66,10 +66,10 @@ namespace SimpleUITestApp.UITests
 			var expectedAlertString = $"You Selected Number {listItemNumber}";
 
 			//Act
-			if (app is Xamarin.UITest.iOS.iOSApp)
+			if (app is iOSApp)
 				app.Invoke("openListViewPage:", "");
 			else
-				app.Invoke("BypassLoginScreen");
+				app.Invoke("OpenListViewPage");
 
 			ListViewPage.TapListItemNumber(listItemNumber);
 
