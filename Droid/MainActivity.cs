@@ -39,7 +39,8 @@ namespace SimpleUITestApp.Droid
 
 			LoadApplication(App = new App());
 		}
-
+		#region Xamarin Test Cloud Back Door Methods
+#if DEBUG
 		[Export("BypassLoginScreen")]
 		public async void BypassLoginScreen()
 		{
@@ -55,6 +56,8 @@ namespace SimpleUITestApp.Droid
 			else
 				App.OpenListViewPageUsingNavigation();
 		}
+#endif
+		#endregion
 	}
 }
 

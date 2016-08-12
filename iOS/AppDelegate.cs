@@ -31,8 +31,8 @@ namespace SimpleUITestApp.iOS
 
 			return base.FinishedLaunching(app, options);
 		}
-		#region Xamarin Test Cloud Back Door Methods
 
+		#region Xamarin Test Cloud Back Door Methods
 #if ENABLE_TEST_CLOUD
 		[Export("xtcAgent:")]
 		public NSString TurnOffTouchId(NSString noValue)
