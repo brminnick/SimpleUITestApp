@@ -23,13 +23,6 @@ namespace SimpleUITestApp.Droid
 			ToolbarResource = Resource.Layout.toolbar;
 
 			global::Xamarin.Forms.Forms.Init(this, bundle);
-			global::Xamarin.Forms.Forms.ViewInitialized += (object sender, Xamarin.Forms.ViewInitializedEventArgs e) =>
-			{
-				if (!string.IsNullOrWhiteSpace(e.View.AutomationId))
-				{
-					e.NativeView.ContentDescription = e.View.AutomationId;
-				}
-			};
 			AndroidAppLinks.Init(this);
 
 			BlobCache.ApplicationName = "SimpleUITestApp";
