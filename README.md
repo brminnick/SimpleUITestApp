@@ -8,7 +8,7 @@ It demonstrates how to utilize [Backdoors in UITest](https://developer.xamarin.c
 
 It also demonstrates how to utilize [App Links] (https://blog.xamarin.com/deep-link-content-with-xamarin-forms-url-navigation/) in UITesting to navigate quickly to the page under test. App Links is [initialized](https://github.com/brminnick/SimpleUITestApp/blob/master/App.cs#L51) and [executed](https://github.com/brminnick/SimpleUITestApp/blob/master/App.cs#L65) in the source code for the app in [App.cs](https://github.com/brminnick/SimpleUITestApp/blob/master/App.cs). The UITest `SelectItemOnListView` uses a backdoor method to [execute the App Links](https://github.com/brminnick/SimpleUITestApp/blob/master/UITests/Tests/TestsAfterLoginScreen.cs#L68).
 
-The login page leverages the [Reusable Login Page](https://github.com/michael-watson/Forms-Expenses) created by [Michael Watson](https://github.com/michael-watson).
+The login page leverages the [Reusable Login Page](https://github.com/michael-watson/Forms-Expenses/tree/master/MyLoginUI) created by [Michael Watson](https://github.com/michael-watson).
 
 There are two UnitTest projects, one of which uses an [iOS Test Runner](https://developer.xamarin.com/guides/ios/deployment,_testing,_and_metrics/touch.unit/#Running_Your_Tests) to run platform-specific unit tests.
 
