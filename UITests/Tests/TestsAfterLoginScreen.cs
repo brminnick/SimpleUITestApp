@@ -19,10 +19,7 @@ namespace SimpleUITestApp.UITests
 
             LoginPage.WaitForLoginScreen();
 
-			if (app is iOSApp)
-				app.Invoke("bypassLoginScreen:", "");
-			else
-				app.Invoke("BypassLoginScreen");
+			BackdoorMethodHelpers.BypassLoginScreen(app);
 
 			app.WaitForElement("First Page");
 		}
@@ -65,12 +62,7 @@ namespace SimpleUITestApp.UITests
 			var expectedAlertString = $"You Selected Number {listItemNumber}";
 
 			//Act
-			if (app is iOSApp)
-				app.Invoke("openListViewPage:", "");
-			else
-				app.Invoke("OpenListViewPage");
-
-			app.Screenshot("Backdoor to List View Page");
+			BackdoorMethodHelpers.OpenListViewPage(app);
 
 			ListViewPage.TapListItemNumber(listItemNumber);
 

@@ -16,11 +16,8 @@ namespace SimpleUITestApp.UITests
 		{
 			base.BeforeEachTest();
 
-			if (app is Xamarin.UITest.iOS.iOSApp)
-			{
-				app.Invoke("xtcAgent:", "");
-				app.Invoke("clearKeyChain:", "");
-			}
+			BackdoorMethodHelpers.CleariOSKeyChain(app);
+			BackdoorMethodHelpers.SetiOSXTCAgent(app);
 		}
 
 		[Test]

@@ -1,4 +1,6 @@
-﻿using Xamarin.UITest;
+﻿using System.Linq;
+
+using Xamarin.UITest;
 
 namespace SimpleUITestApp.UITests
 {
@@ -27,7 +29,7 @@ namespace SimpleUITestApp.UITests
 		public string GetAlertText(int numberSelected)
 		{
 			var alertTextQuery = app.Query($"You Selected Number {numberSelected}");
-			return alertTextQuery[0]?.Text;
+			return alertTextQuery?.FirstOrDefault()?.Text;
 		}
 
 		public void TapBackButton()

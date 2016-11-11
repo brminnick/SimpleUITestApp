@@ -1,4 +1,6 @@
-﻿using Xamarin.UITest;
+﻿using System.Linq;
+
+using Xamarin.UITest;
 using Xamarin.UITest.Queries;
 
 using Query = System.Func<Xamarin.UITest.Queries.AppQuery, Xamarin.UITest.Queries.AppQuery>;
@@ -113,13 +115,13 @@ namespace SimpleUITestApp.UITests
 		public string GetEntryFieldText()
 		{
 			var entryFieldQuery = app.Query(TextEntry);
-			return entryFieldQuery[0]?.Text;
+			return entryFieldQuery?.FirstOrDefault()?.Text;
 		}
 
 		public string GetEntryFieldTextByID()
 		{
 			var entryFieldQuery = app.Query(TextEntryUsingID);
-			return entryFieldQuery[0]?.Text;
+			return entryFieldQuery?.FirstOrDefault()?.Text;
 		}
 
 		public string GetTitle()
@@ -134,7 +136,7 @@ namespace SimpleUITestApp.UITests
 			else
 				titleQuery = app.Query(x => x.Class("TextView").Marked("First Page"));
 
-			return titleQuery[0]?.Text;
+			return titleQuery?.FirstOrDefault()?.Text;
 		}
 	}
 }
