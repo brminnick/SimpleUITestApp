@@ -3,6 +3,7 @@
 using Xamarin.Forms;
 
 using MyLoginUI.Views;
+using SimpleUITestApp.Shared;
 
 namespace SimpleUITestApp
 {

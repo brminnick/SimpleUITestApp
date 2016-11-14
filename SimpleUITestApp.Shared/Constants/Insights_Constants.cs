@@ -1,4 +1,4 @@
-﻿namespace SimpleUITestApp
+﻿namespace SimpleUITestApp.Shared
 {
 	public static class Insights_Constants
 	{

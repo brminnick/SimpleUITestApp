@@ -1,6 +1,6 @@
 ﻿using Xamarin.Forms;
 
-namespace SimpleUITestApp
+namespace SimpleUITestApp.Shared
 {
 	public static class StyleConstants
 	{

@@ -1,5 +1,7 @@
 ﻿using Xamarin.UITest;
 
+using SimpleUITestApp.Shared;
+
 using Query = System.Func<Xamarin.UITest.Queries.AppQuery, Xamarin.UITest.Queries.AppQuery>;
 
 namespace SimpleUITestApp.UITests
@@ -31,7 +33,6 @@ namespace SimpleUITestApp.UITests
 		{
 			app.Tap(UsernameEntry);
 			app.ClearText();
-			app.ClearText();
 			app.EnterText(username);
 			app.DismissKeyboard();
 			app.Screenshot($"Entered Username: {username}");
@@ -40,7 +41,6 @@ namespace SimpleUITestApp.UITests
 		public void EnterPassword(string password)
 		{
 			app.Tap(PasswordEntry);
-			app.ClearText();
 			app.ClearText();
 			app.EnterText(password);
 			app.DismissKeyboard();

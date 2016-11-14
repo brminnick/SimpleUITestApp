@@ -1,10 +1,8 @@
 ﻿using System;
 
-using MyLoginUI;
-
 using Xamarin.Forms;
 
-using MyLoginUI.Pages;
+using SimpleUITestApp.Shared;
 
 namespace SimpleUITestApp
 {

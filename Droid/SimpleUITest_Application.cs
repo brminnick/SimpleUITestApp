@@ -2,7 +2,7 @@
 
 using Android.App;
 using Android.Runtime;
-
+using SimpleUITestApp.Shared;
 using Xamarin;
 
 namespace SimpleUITestApp.Droid

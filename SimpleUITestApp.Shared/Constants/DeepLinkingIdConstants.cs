@@ -1,5 +1,5 @@
 ﻿using System;
-namespace SimpleUITestApp
+namespace SimpleUITestApp.Shared
 {
 	public static class DeepLinkingIdConstants
 	{

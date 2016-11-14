@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyLoginUI.Droid", "MyLoginU
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyLoginUI.iOS", "MyLoginUI\iOS\MyLoginUI.iOS.csproj", "{D4EAC19B-570E-416A-95E7-32E449F04EDF}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "SimpleUITestApp.Shared", "SimpleUITestApp.Shared\SimpleUITestApp.Shared.shproj", "{DCC188B2-F589-4166-BBAE-CC619FEDEDA9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

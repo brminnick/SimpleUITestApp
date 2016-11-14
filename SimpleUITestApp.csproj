@@ -35,18 +35,15 @@
     <Compile Include="Models\SampleDataModel.cs" />
     <Compile Include="Pages\FirstPage.cs" />
     <Compile Include="App.cs" />
-    <Compile Include="Constants\Insights_Constants.cs" />
     <Compile Include="Pages\LoginPage.cs" />
     <Compile Include="Pages\NewUserSignUpPage.cs" />
     <Compile Include="Services\ILogin.cs" />
-    <Compile Include="Constants\StyleConstants.cs" />
     <Compile Include="Pages\BasePage.cs" />
     <Compile Include="Views\WhiteTextImageCell.cs" />
-    <Compile Include="Constants\AutomationIdConstants.cs" />
     <Compile Include="Services\Extensions.cs" />
     <Compile Include="Services\IEnvironment.cs" />
-    <Compile Include="Constants\DeepLinkingIdConstants.cs" />
   </ItemGroup>
+  <Import Project="SimpleUITestApp.Shared\SimpleUITestApp.Shared.projitems" Label="Shared" Condition="Exists('SimpleUITestApp.Shared\SimpleUITestApp.Shared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="packages\Xamarin.Forms.2.0.1.6505\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('packages\Xamarin.Forms.2.0.1.6505\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
   <Import Project="packages\Xamarin.Insights.1.12.3\build\portable-win+net45+wp80+windows8+wpa+MonoAndroid10+MonoTouch10\Xamarin.Insights.targets" Condition="Exists('packages\Xamarin.Insights.1.12.3\build\portable-win+net45+wp80+windows8+wpa+MonoAndroid10+MonoTouch10\Xamarin.Insights.targets')" />
@@ -54,7 +51,6 @@
   <ItemGroup>
     <Folder Include="Pages\" />
     <Folder Include="Models\" />
-    <Folder Include="Constants\" />
     <Folder Include="Services\" />
     <Folder Include="Views\" />
   </ItemGroup>
