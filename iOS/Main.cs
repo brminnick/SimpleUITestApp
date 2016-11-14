@@ -2,6 +2,8 @@
 
 using Xamarin;
 
+using SimpleUITestApp.Shared;
+
 namespace SimpleUITestApp.iOS
 {
 	public class Application

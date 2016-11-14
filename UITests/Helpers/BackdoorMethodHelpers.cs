@@ -3,7 +3,7 @@ using Xamarin.UITest.iOS;
 
 namespace SimpleUITestApp.UITests
 {
-	public static class BackdoorMethodHelpers
+	static class BackdoorMethodHelpers
 	{
 		internal static void CleariOSKeyChain(IApp app)
 		{

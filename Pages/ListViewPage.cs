@@ -1,8 +1,9 @@
 ﻿using System;
 
-using Xamarin.Forms;
-using System.Collections.Generic;
 using Xamarin;
+using Xamarin.Forms;
+
+using SimpleUITestApp.Shared;
 
 namespace SimpleUITestApp
 {

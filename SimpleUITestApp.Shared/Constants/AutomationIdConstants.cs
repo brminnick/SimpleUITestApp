@@ -1,5 +1,5 @@
 ﻿using System;
-namespace SimpleUITestApp
+namespace SimpleUITestApp.Shared
 {
 	public static class AutomationIdConstants
 	{
@@ -16,6 +16,15 @@ namespace SimpleUITestApp
 		public const string TextLabel = "TextLabel";
 		public const string ListViewButton = "ListViewButton";
 		public const string BusyActivityIndicator = "BusyActivityIndicator";
+		#endregion
+
+		#region LoginPage 
+		public const string UsernameEntry = "UsernameEntry";
+		public const string PasswordEntry = "PasswordEntry";
+		public const string LoginButton = "LoginButton";
+		public const string NewUserButton = "NewUserButton";
+		public const string ForgotPasswordButton = "ForgotPasswordButton";
+		public const string SaveUsernameSwitch = "SaveUsernameSwitch";
 		#endregion
 	}
 }

@@ -1,4 +1,7 @@
 ﻿using Xamarin.UITest;
+
+using SimpleUITestApp.Shared;
+
 using Query = System.Func<Xamarin.UITest.Queries.AppQuery, Xamarin.UITest.Queries.AppQuery>;
 
 namespace SimpleUITestApp.UITests
@@ -15,12 +18,12 @@ namespace SimpleUITestApp.UITests
 		public LoginPage(IApp app, Platform platform)
 			: base(app, platform)
 		{
-			ForgotPasswordButton = x => x.Marked(MyLoginUI.AutomationIdConstants.ForgotPasswordButton);
-			LoginButton = x => x.Marked(MyLoginUI.AutomationIdConstants.LoginButton);
-			PasswordEntry = x => x.Marked(MyLoginUI.AutomationIdConstants.PasswordEntry);
-			RememberMeSwitch = x => x.Marked(MyLoginUI.AutomationIdConstants.SaveUsernameSwitch);
-			SignUpButton = x => x.Marked(MyLoginUI.AutomationIdConstants.NewUserButton);
-			UsernameEntry = x => x.Marked(MyLoginUI.AutomationIdConstants.UsernameEntry);
+			ForgotPasswordButton = x => x.Marked(AutomationIdConstants.ForgotPasswordButton);
+			LoginButton = x => x.Marked(AutomationIdConstants.LoginButton);
+			PasswordEntry = x => x.Marked(AutomationIdConstants.PasswordEntry);
+			RememberMeSwitch = x => x.Marked(AutomationIdConstants.SaveUsernameSwitch);
+			SignUpButton = x => x.Marked(AutomationIdConstants.NewUserButton);
+			UsernameEntry = x => x.Marked(AutomationIdConstants.UsernameEntry);
 		}
 
 		public void LoginWithUsernamePassword(string username, string password)
@@ -34,7 +37,6 @@ namespace SimpleUITestApp.UITests
 		{
 			app.Tap(UsernameEntry);
 			app.ClearText();
-			app.ClearText();
 			app.EnterText(username);
 			app.DismissKeyboard();
 			app.Screenshot($"Entered Username: {username}");
@@ -43,7 +45,6 @@ namespace SimpleUITestApp.UITests
 		public void EnterPassword(string password)
 		{
 			app.Tap(PasswordEntry);
-			app.ClearText();
 			app.ClearText();
 			app.EnterText(password);
 			app.DismissKeyboard();

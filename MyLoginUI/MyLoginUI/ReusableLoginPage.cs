@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 using Xamarin.Forms;
 
 using MyLoginUI.Views;
-using System.Collections.Generic;
+using SimpleUITestApp.Shared;
 
 namespace MyLoginUI.Pages
 {
