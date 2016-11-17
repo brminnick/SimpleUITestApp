@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 using Xamarin.Forms;
 
 using MyLoginUI.Pages;
-using Microsoft.Azure.Mobile;
-using Microsoft.Azure.Mobile.Analytics;
+
+using SimpleUITestApp.Shared;
 
 namespace SimpleUITestApp
 {
@@ -13,6 +14,24 @@ namespace SimpleUITestApp
 		public LoginPage()
 		{
 			AutomationId = "loginPage";
+
+			#if DEBUG
+			var crashButton = new Button
+			{
+				Text = "x",
+				TextColor = Color.White,
+				AutomationId = AutomationIdConstants.CrashButton
+			};
+			crashButton.Clicked += (s, e) =>
+			{
+				throw new Exception("Crash Button Tapped");
+			};
+
+			MainLayout.Children.Add(crashButton,
+				Constraint.RelativeToParent((parent) => parent.X),
+                Constraint.RelativeToParent((parent) => parent.Y)
+			);
+			#endif
 		}
 
 		public bool TouchIdSuccess

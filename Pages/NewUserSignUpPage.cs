@@ -20,7 +20,6 @@ namespace SimpleUITestApp
 			AddChildrenToParentLayout();
 		}
 
-
 		public void ConstructUI()
 		{
 			layout = new StackLayout

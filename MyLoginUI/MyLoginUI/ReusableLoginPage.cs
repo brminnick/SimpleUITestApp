@@ -32,7 +32,6 @@ namespace MyLoginUI.Pages
 		#region Internal Global References
 
 		Image logo;
-		RelativeLayout layout;
 		StyledButton loginButton, newUserSignUpButton, forgotPasswordButton;
 		StyledEntry loginEntry, passwordEntry;
 		Label logoSlogan, rememberMe;
@@ -48,16 +47,20 @@ namespace MyLoginUI.Pages
 		{
 			BackgroundColor = Color.FromHex("#3498db");
 			Padding = new Thickness(0, Device.OnPlatform(20, 0, 0), 0, 0);
-			layout = new RelativeLayout();
+			MainLayout = new RelativeLayout();
 
 			CreateGlobalChildren();
 			AddConstraintsToChildren();
 
 			Content = new ScrollView
 			{
-				Content = layout
+				Content = MainLayout
 			};
 		}
+
+		#region Properties
+		public RelativeLayout MainLayout { get; set; }
+		#endregion
 
 		#region UI Construction Methods
 
@@ -134,64 +137,64 @@ namespace MyLoginUI.Pages
 
 		void AddConstraintsToChildren()
 		{
-			Func<RelativeLayout, double> getNewUserButtonWidth = (p) => newUserSignUpButton.Measure(layout.Width, layout.Height).Request.Width;
-			Func<RelativeLayout, double> getForgotButtonWidth = (p) => forgotPasswordButton.Measure(layout.Width, layout.Height).Request.Width;
-			Func<RelativeLayout, double> getForgotButtonHeight = (p) => forgotPasswordButton.Measure(layout.Width, layout.Height).Request.Height;
-			Func<RelativeLayout, double> getLogoHeight = (p) => logo.Measure(layout.Width, layout.Height).Request.Height;
-			Func<RelativeLayout, double> getLogoSloganWidth = (p) => logoSlogan.Measure(layout.Width, layout.Height).Request.Width;
-			Func<RelativeLayout, double> getRememberMeWidth = (p) => rememberMe.Measure(layout.Width, layout.Height).Request.Width;
-			Func<RelativeLayout, double> getRememberMeHeight = (p) => rememberMe.Measure(layout.Width, layout.Height).Request.Height;
-			Func<RelativeLayout, double> getSwitchWidth = (p) => saveUsername.Measure(layout.Width, layout.Height).Request.Width;
+			Func<RelativeLayout, double> getNewUserButtonWidth = (p) => newUserSignUpButton.Measure(MainLayout.Width, MainLayout.Height).Request.Width;
+			Func<RelativeLayout, double> getForgotButtonWidth = (p) => forgotPasswordButton.Measure(MainLayout.Width, MainLayout.Height).Request.Width;
+			Func<RelativeLayout, double> getForgotButtonHeight = (p) => forgotPasswordButton.Measure(MainLayout.Width, MainLayout.Height).Request.Height;
+			Func<RelativeLayout, double> getLogoHeight = (p) => logo.Measure(MainLayout.Width, MainLayout.Height).Request.Height;
+			Func<RelativeLayout, double> getLogoSloganWidth = (p) => logoSlogan.Measure(MainLayout.Width, MainLayout.Height).Request.Width;
+			Func<RelativeLayout, double> getRememberMeWidth = (p) => rememberMe.Measure(MainLayout.Width, MainLayout.Height).Request.Width;
+			Func<RelativeLayout, double> getRememberMeHeight = (p) => rememberMe.Measure(MainLayout.Width, MainLayout.Height).Request.Height;
+			Func<RelativeLayout, double> getSwitchWidth = (p) => saveUsername.Measure(MainLayout.Width, MainLayout.Height).Request.Width;
 
-			layout.Children.Add(
+			MainLayout.Children.Add(
 				logo,
 				xConstraint: Constraint.Constant(100),
 				yConstraint: Constraint.Constant(250),
 				widthConstraint: Constraint.RelativeToParent(p => p.Width - 200)
 			);
 
-			layout.Children.Add(
+			MainLayout.Children.Add(
 				logoSlogan,
 				xConstraint: Constraint.RelativeToParent(p => (p.Width / 2) - (getLogoSloganWidth(p) / 2)),
 				yConstraint: Constraint.Constant(125)
 			);
 
-			layout.Children.Add(
+			MainLayout.Children.Add(
 				loginEntry,
 				xConstraint: Constraint.Constant(40),
 				yConstraint: Constraint.RelativeToView(logoSlogan, (p, v) => v.Y + v.Height + _relativeLayoutPadding),
 				widthConstraint: Constraint.RelativeToParent(p => p.Width - 80)
 			);
-			layout.Children.Add(
+			MainLayout.Children.Add(
 				passwordEntry,
 				xConstraint: Constraint.Constant(40),
 				yConstraint: Constraint.RelativeToView(loginEntry, (p, v) => v.Y + v.Height + _relativeLayoutPadding),
 				widthConstraint: Constraint.RelativeToParent(p => p.Width - 80)
 			);
 
-			layout.Children.Add(
+			MainLayout.Children.Add(
 				rememberMe,
 				xConstraint: Constraint.RelativeToParent(p => p.Width - 40 - getSwitchWidth(p) - getRememberMeWidth(p) - 20),
 				yConstraint: Constraint.RelativeToView(passwordEntry, (p, v) => v.Y + v.Height + _relativeLayoutPadding)
 			);
-			layout.Children.Add(
+			MainLayout.Children.Add(
 				saveUsername,
 				xConstraint: Constraint.RelativeToParent(p => p.Width - 40 - getSwitchWidth(p)),
 				yConstraint: Constraint.RelativeToView(passwordEntry, (p, v) => v.Y + v.Height + _relativeLayoutPadding)
 			);
 
-			layout.Children.Add(
+			MainLayout.Children.Add(
 				loginButton,
 				xConstraint: Constraint.Constant(40),
 				yConstraint: Constraint.RelativeToView(saveUsername, (p, v) => v.Y + v.Height + _relativeLayoutPadding),
 				widthConstraint: Constraint.RelativeToParent(p => p.Width - 80)
 			);
-			layout.Children.Add(
+			MainLayout.Children.Add(
 				newUserSignUpButton,
 				xConstraint: Constraint.RelativeToParent(p => (p.Width / 2) - (getNewUserButtonWidth(p) / 2)),
 				yConstraint: Constraint.RelativeToView(loginButton, (p, v) => v.Y + loginButton.Height + 15)
 			);
-			layout.Children.Add(
+			MainLayout.Children.Add(
 				forgotPasswordButton,
 				xConstraint: Constraint.RelativeToParent(p => (p.Width / 2) - (getForgotButtonWidth(p) / 2)),
 				yConstraint: Constraint.RelativeToView(newUserSignUpButton, (p, v) => v.Y + newUserSignUpButton.Height + _relativeLayoutPadding)
@@ -238,9 +241,9 @@ namespace MyLoginUI.Pages
 				Device.BeginInvokeOnMainThread(async () =>
 				{
 					await Task.Delay(500);
-					await logo?.TranslateTo(0, -layout.Height * 0.3 - 10, 250);
-					await logo?.TranslateTo(0, -layout.Height * 0.3 + 5, 100);
-					await logo?.TranslateTo(0, -layout.Height * 0.3, 50);
+					await logo?.TranslateTo(0, -MainLayout.Height * 0.3 - 10, 250);
+					await logo?.TranslateTo(0, -MainLayout.Height * 0.3 + 5, 100);
+					await logo?.TranslateTo(0, -MainLayout.Height * 0.3, 50);
 
 					await logo?.TranslateTo(0, -200 + 5, 100);
 					await logo?.TranslateTo(0, -200, 50);
@@ -273,7 +276,6 @@ namespace MyLoginUI.Pages
 				});
 			}
 		}
-
 		#endregion
 
 		#region Extension Methods
@@ -285,5 +287,6 @@ namespace MyLoginUI.Pages
 		}
 
 		#endregion
+
 	}
 }
