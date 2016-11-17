@@ -1,6 +1,5 @@
-﻿using System;
+﻿using System.Collections.Generic;
 
-using Xamarin;
 using Xamarin.Forms;
 
 using SimpleUITestApp.Shared;
@@ -30,7 +29,9 @@ namespace SimpleUITestApp
 			listView.ItemTapped += (s, e) =>
 			{
 				var item = e.Item;
-				Insights.Track(Insights_Constants.LIST_VIEW_ITEM_TAPPED, Insights_Constants.LIST_VIEW_ITEM_NUMBER, item.ToString());
+				AnalyticsHelpers.TrackEvent(AnalyticsConstants.LIST_VIEW_ITEM_TAPPED, new Dictionary<string, string> {
+					{ AnalyticsConstants.LIST_VIEW_ITEM_NUMBER, item.ToString() } 
+				});
 
 				DisplayAlert("Number Tapped", $"You Selected Number {item.ToString()}", "OK");
 			};
@@ -40,7 +41,7 @@ namespace SimpleUITestApp
 		protected override void OnAppearing()
 		{
 			base.OnAppearing();
-			Insights.Track(Insights_Constants.LIST_VIEW_PAGE_ON_APPEARING);
+			AnalyticsHelpers.TrackEvent(AnalyticsConstants.LIST_VIEW_PAGE_ON_APPEARING);
 		}
 	}
 }

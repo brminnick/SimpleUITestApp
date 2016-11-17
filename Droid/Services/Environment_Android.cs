@@ -4,7 +4,6 @@ using Android.OS;
 
 using SimpleUITestApp.Droid;
 
-using Xamarin;
 using Xamarin.Forms;
 
 [assembly: Dependency(typeof(Environment_Android))]
@@ -29,7 +28,7 @@ namespace SimpleUITestApp.Droid
 			}
 			catch (Exception e)
 			{
-				Insights.Report(e);
+				AnalyticsHelpers.LogWarning("Operating System Check Failed", e.Message, e);
 				return false;
 			}
 		}

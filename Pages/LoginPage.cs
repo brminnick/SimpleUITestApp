@@ -3,6 +3,8 @@
 using Xamarin.Forms;
 
 using MyLoginUI.Pages;
+using Microsoft.Azure.Mobile;
+using Microsoft.Azure.Mobile.Analytics;
 
 namespace SimpleUITestApp
 {
@@ -50,7 +52,6 @@ namespace SimpleUITestApp
 				else {
 					insightsDict.Add("Saves username", "No");
 				}
-				Xamarin.Insights.Identify(userName, insightsDict);
 
 				App.IsLoggedIn = true;
 
@@ -68,7 +69,7 @@ namespace SimpleUITestApp
 				{
 					await Navigation.PushModalAsync(new NewUserSignUpPage());
 
-					Xamarin.Insights.Track("NewUserSignUp", new Dictionary<string, string> {
+					AnalyticsHelpers.TrackEvent("NewUserSignUp", new Dictionary<string, string> {
 						{ "ActionPoint", "System Prompt" },
 					});
 				}
