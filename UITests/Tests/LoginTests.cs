@@ -85,5 +85,17 @@ namespace SimpleUITestApp.UITests
 			//Assert
 			Assert.IsTrue(app.Query("Login").Length > 0);
 		}
+
+		[Ignore]
+		[Test]
+		public void CrashButtonTest()
+		{
+			//Arrange
+
+			//Act
+			LoginPage.TapCrashButton();
+
+			//Assert
+		}
 	}
 }

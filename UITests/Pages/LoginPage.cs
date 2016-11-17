@@ -14,6 +14,7 @@ namespace SimpleUITestApp.UITests
 		protected readonly Query RememberMeSwitch;
 		protected readonly Query SignUpButton;
 		protected readonly Query UsernameEntry;
+		protected readonly Query CrashButton;
 
 		public LoginPage(IApp app, Platform platform)
 			: base(app, platform)
@@ -24,6 +25,7 @@ namespace SimpleUITestApp.UITests
 			RememberMeSwitch = x => x.Marked(AutomationIdConstants.SaveUsernameSwitch);
 			SignUpButton = x => x.Marked(AutomationIdConstants.NewUserButton);
 			UsernameEntry = x => x.Marked(AutomationIdConstants.UsernameEntry);
+			CrashButton = x => x.Marked(AutomationIdConstants.CrashButton);
 		}
 
 		public void LoginWithUsernamePassword(string username, string password)
@@ -98,5 +100,11 @@ namespace SimpleUITestApp.UITests
         {
             app.WaitForElement(LoginButton);
         }
+
+		public void TapCrashButton()
+		{
+			app.Tap(CrashButton);
+			app.Screenshot("Crash Button Tapped");
+		}
 	}
 }
