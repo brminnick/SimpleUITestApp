@@ -7,6 +7,8 @@ namespace SimpleUITestApp.UITests
 	[Category("LoginTests")]
 	public class LoginTests : BaseTest
 	{
+		const string _username = "Brandon";
+
 		public LoginTests(Platform platform)
 			: base(platform)
 		{
@@ -16,7 +18,7 @@ namespace SimpleUITestApp.UITests
 		{
 			base.BeforeEachTest();
 
-			BackdoorMethodHelpers.CleariOSKeyChain(app);
+			BackdoorMethodHelpers.CleariOSKeyChain(app, _username);
 			BackdoorMethodHelpers.SetiOSXTCAgent(app);
 		}
 
@@ -24,7 +26,7 @@ namespace SimpleUITestApp.UITests
 		public void CreateNewUserAndLogin()
 		{
 			//Arrange
-			var username = "Brandon";
+			var username = _username;
 			var password = "test";
 			var expectedFirstPageTitle = "First Page";
 
@@ -42,7 +44,7 @@ namespace SimpleUITestApp.UITests
 		public void CreateNewUserAndUnsuccessfullyLogin()
 		{
 			//Arrange
-			var username = "Brandon";
+			var username = _username;
 			var password = "test";
 			var incorrectPassword = "incorrect";
 
@@ -60,7 +62,7 @@ namespace SimpleUITestApp.UITests
 		public void TryLoginWithNoPasswordEntered()
 		{
 			//Arrange
-			var username = "Brandon";
+			var username = _username;
 
 			//Act
 			LoginPage.EnterUsername(username);
