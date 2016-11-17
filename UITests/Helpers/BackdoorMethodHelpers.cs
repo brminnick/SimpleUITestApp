@@ -5,10 +5,10 @@ namespace SimpleUITestApp.UITests
 {
 	static class BackdoorMethodHelpers
 	{
-		internal static void CleariOSKeyChain(IApp app)
+		internal static void CleariOSKeyChain(IApp app, string username)
 		{
 			if(app is iOSApp)
-				app.Invoke("clearKeyChain:", "");
+				app.Invoke("clearKeyChain:", username);
 		}
 
 		internal static void SetiOSXTCAgent(IApp app)

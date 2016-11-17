@@ -34,10 +34,10 @@ namespace SimpleUITestApp.iOS
 		}
 
 		[Export("clearKeyChain:")]
-		public NSString ClearKeychain(NSString noValue)
+		public NSString ClearKeychain(NSString username)
 		{
 			NSUserDefaults.StandardUserDefaults.RemoveObject("username");
-			KeychainHelpers.DeletePasswordForUsername("Brandon", "XamarinExpenses", true);
+			KeychainHelpers.DeletePasswordForUsername(username, "XamarinExpenses", true);
 			return new NSString();
 		}
 
