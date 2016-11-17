@@ -20,16 +20,6 @@ namespace SimpleUITestApp.Droid
 		public override void OnCreate()
 		{
 			base.OnCreate();
-
-			Insights.Initialize(Insights_Constants.INSIGHTS_API_KEY, this);
-
-			Insights.HasPendingCrashReport += (sender, isStartupCrash) =>
-			{
-				if (isStartupCrash)
-				{
-					Insights.PurgePendingCrashReports().Wait();
-				}
-			};
 		}
 	}
 }

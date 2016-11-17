@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
-using Xamarin;
 using Xamarin.Forms;
 
 using MyLoginUI;
@@ -104,43 +104,42 @@ namespace SimpleUITestApp
 		public async void OnButtonClick(object sender, EventArgs e)
 		{
 			string entryText = textEntry.Text;
-			Insights.Track(Insights_Constants.GO_BUTTON_TAPPED, Insights_Constants.TEXT_ENTERED, entryText);
+			AnalyticsHelpers.TrackEvent(AnalyticsConstants.GO_BUTTON_TAPPED, new Dictionary<string, string> {
+				{ AnalyticsConstants.TEXT_ENTERED, entryText }
+			});
 
 			Device.BeginInvokeOnMainThread(() =>
 			{
-			//Hide the keyboard
-			textEntry.Unfocus();
+				//Hide the keyboard
+				textEntry.Unfocus();
 
-			//Show the activity indicator and hide the Go Button
+				//Show the activity indicator and hide the Go Button
 
-			activityIndicator.IsRunning = true;
+				activityIndicator.IsRunning = true;
 				activityIndicator.IsVisible = true;
 				goButton.IsVisible = false;
 				goButton.IsEnabled = false;
 			});
 			//Perform a task for 2000 miliseconds
-			var timer = Insights.TrackTime(Insights_Constants.ACTIVITY_INDICATOR_ONSCREEN);
-			timer.Start();
 			await Task.Delay(2000);
-			timer.Stop();
 
 			Device.BeginInvokeOnMainThread(() =>
 			{
-			//Hide the activity indicator now that task has completed
-			activityIndicator.IsRunning = false;
+				//Hide the activity indicator now that task has completed
+				activityIndicator.IsRunning = false;
 				activityIndicator.IsVisible = false;
 				goButton.IsVisible = true;
 				goButton.IsEnabled = true;
 
-			//display the 
-			textLabel.Text = entryText;
+				//display the 
+				textLabel.Text = entryText;
 			});
 		}
 
 		protected override void OnAppearing()
 		{
 			base.OnAppearing();
-			Insights.Track(Insights_Constants.FIRST_PAGE_ON_APPEARING);
+			AnalyticsHelpers.TrackEvent(AnalyticsConstants.FIRST_PAGE_ON_APPEARING);
 		}
 	}
 }

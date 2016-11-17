@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleUITestApp", "SimpleUI
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleUITestApp.iOS", "iOS\SimpleUITestApp.iOS.csproj", "{807CCD2A-05F5-4CC3-BD9E-8C5C4DDC6DEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleUITestApp.Droid", "Droid\SimpleUITestApp.Droid.csproj", "{74F83F09-82B3-47B4-93F8-59B6FAA89EFA}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleUITestApp.UITests", "UITests\SimpleUITestApp.UITests.csproj", "{B8C47BDD-0736-481B-847E-372F14A40303}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleUITestApp.UnitTests_WithTestRunner", "UnitTests\SimpleUITestApp.UnitTests_WithTestRunner.csproj", "{9E42A1ED-2FC1-41FF-BA89-A368DF079F83}"
@@ -18,8 +16,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReusableLoginPage", "ReusableLoginPage", "{B4BC40AE-EB0F-48D8-BB36-65DE380F32CB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyLoginUI", "MyLoginUI\MyLoginUI\MyLoginUI.csproj", "{6E1B18A4-C150-4627-96FF-741A8AE36F58}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyLoginUI.Droid", "MyLoginUI\Droid\MyLoginUI.Droid.csproj", "{76C86216-1BAD-4CAD-BF57-E7B970E67C78}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyLoginUI.iOS", "MyLoginUI\iOS\MyLoginUI.iOS.csproj", "{D4EAC19B-570E-416A-95E7-32E449F04EDF}"
 EndProject

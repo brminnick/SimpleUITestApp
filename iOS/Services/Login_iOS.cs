@@ -46,10 +46,6 @@ namespace SimpleUITestApp.iOS
 					{
 						Console.WriteLine("Success!!");
 						var userName = NSUserDefaults.StandardUserDefaults.ValueForKey(new NSString("username")).ToString();
-
-						Xamarin.Insights.Identify(userName, new Dictionary<string, string> {
-							{ "User Type", "NonApprover" },
-						});
 					}
 
 					page.TouchIdSuccess = success;
