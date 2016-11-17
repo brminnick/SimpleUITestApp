@@ -1,4 +1,4 @@
-[![Build Status](https://www.bitrise.io/app/40a219a58dc5b2f8.svg?token=Ig49v6_W-QtpTtMlznPHHA&branch=master)](https://www.bitrise.io/app/40a219a58dc5b2f8)
+[![Build Status](https://www.bitrise.io/app/7d55e4014e3f2164.svg?token=obxBTbr5cKzohmwZbTJJTQ)](https://www.bitrise.io/app/7d55e4014e3f2164)
 ## Simple UI Test and Unit Test Sample App
 This app shows how to implement UITest and Unit Tests into a Xamarin.Forms project.
 
