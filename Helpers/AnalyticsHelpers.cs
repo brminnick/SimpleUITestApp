@@ -21,28 +21,36 @@ namespace SimpleUITestApp
 				Analytics.TrackEvent(trackIdentifier, table);
 		}
 
-		public static void LogWarning(string tag, string message, Exception exception = null)
+		public static void Log(string tag, string message, Exception exception = null, MobileCenterLogType type = MobileCenterLogType.Warn)
 		{
-			if (MobileCenter.Enabled && Analytics.Enabled)
-				MobileCenterLog.Warn(tag, message, exception);
+			switch (type)
+			{
+				case MobileCenterLogType.Info:
+					MobileCenterLog.Info(tag, message, exception);
+					break;
+				case MobileCenterLogType.Warn:
+					MobileCenterLog.Warn(tag, message, exception);
+					break;
+				case MobileCenterLogType.Error:
+					MobileCenterLog.Error(tag, message, exception);
+					break;
+				case MobileCenterLogType.Assert:
+					MobileCenterLog.Assert(tag, message, exception);
+					break;
+				case MobileCenterLogType.Verbose:
+					MobileCenterLog.Assert(tag, message, exception);
+					break;
+				case MobileCenterLogType.Debug:
+					MobileCenterLog.Debug(tag, message, exception);
+					break;
+				default:
+					throw new Exception("MobileCenterLogType Does Not Exist");
+			}
 		}
+	}
 
-		public static void LogError(string tag, string message, Exception exception = null)
-		{
-			if (MobileCenter.Enabled && Analytics.Enabled)
-				MobileCenterLog.Error(tag, message, exception);
-		}
-
-		public static void LogInfo(string tag, string message, Exception exception = null)
-		{
-			if (MobileCenter.Enabled && Analytics.Enabled)
-				MobileCenterLog.Info(tag, message, exception);
-		}
-
-		public static void LogDebug(string tag, string message, Exception exception = null)
-		{
-			if (MobileCenter.Enabled && Analytics.Enabled)
-				MobileCenterLog.Debug(tag, message, exception);
-		}
+	public enum MobileCenterLogType
+	{
+		Assert, Debug, Error, Info, Verbose, Warn
 	}
 }
