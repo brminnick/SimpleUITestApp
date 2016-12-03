@@ -4,7 +4,6 @@ using Xamarin.UITest;
 
 namespace SimpleUITestApp.UITests
 {
-	[TestFixture(Platform.Android)]
 	[TestFixture(Platform.iOS)]
 
 	public abstract class BaseTest
