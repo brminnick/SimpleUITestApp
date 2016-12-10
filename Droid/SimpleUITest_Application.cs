@@ -20,6 +20,8 @@ namespace SimpleUITestApp.Droid
 		public override void OnCreate()
 		{
 			base.OnCreate();
+
+            AnalyticsHelpers.Start(AnalyticsConstants.MOBILE_CENTER_DROID_API_KEY);
 		}
 	}
 }
