@@ -24,6 +24,14 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleUITestApp.Droid", "Droid\SimpleUITestApp.Droid.csproj", "{74F83F09-82B3-47B4-93F8-59B6FAA89EFA}"
 EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		SimpleUITestApp.Shared\SimpleUITestApp.Shared.projitems*{06291122-42a6-4585-ac8c-d481126d1b5d}*SharedItemsImports = 4
+		SimpleUITestApp.Shared\SimpleUITestApp.Shared.projitems*{6e1b18a4-c150-4627-96ff-741a8ae36f58}*SharedItemsImports = 4
+		SimpleUITestApp.Shared\SimpleUITestApp.Shared.projitems*{74f83f09-82b3-47b4-93f8-59b6faa89efa}*SharedItemsImports = 4
+		SimpleUITestApp.Shared\SimpleUITestApp.Shared.projitems*{807ccd2a-05f5-4cc3-bd9e-8c5c4ddc6dee}*SharedItemsImports = 4
+		SimpleUITestApp.Shared\SimpleUITestApp.Shared.projitems*{b8c47bdd-0736-481b-847e-372f14a40303}*SharedItemsImports = 4
+		SimpleUITestApp.Shared\SimpleUITestApp.Shared.projitems*{dcc188b2-f589-4166-bbae-cc619fededa9}*SharedItemsImports = 13
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|iPhone = Debug|iPhone
