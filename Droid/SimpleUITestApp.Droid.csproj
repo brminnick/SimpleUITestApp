@@ -185,7 +185,6 @@
     <Compile Include="SimpleUITest_Application.cs" />
     <Compile Include="Services\Login_Droid.cs" />
     <Compile Include="Services\Environment_Android.cs" />
-    <Compile Include="AkavacheSqliteLinkerOverride.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
