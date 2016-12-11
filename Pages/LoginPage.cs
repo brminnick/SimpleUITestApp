@@ -20,6 +20,7 @@ namespace SimpleUITestApp
 			{
 				Text = "x",
 				TextColor = Color.White,
+				BackgroundColor = Color.Transparent,
 				AutomationId = AutomationIdConstants.CrashButton
 			};
 			crashButton.Clicked += (s, e) =>

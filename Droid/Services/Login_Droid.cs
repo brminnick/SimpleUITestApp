@@ -38,7 +38,7 @@ namespace SimpleUITestApp.Droid
 			}
 			catch (Exception e)
 			{
-				AnalyticsHelpers.LogWarning("No Username Stored", e.Message, e);
+				AnalyticsHelpers.Log("No Username Stored", e.Message, e);
 				return false;
 			}
 
@@ -48,7 +48,7 @@ namespace SimpleUITestApp.Droid
 			}
 			catch (Exception e)
 			{
-				AnalyticsHelpers.LogWarning("No Password Store", e.Message, e);
+				AnalyticsHelpers.Log("No Password Store", e.Message, e);
 				return false;
 			}
 
@@ -58,7 +58,7 @@ namespace SimpleUITestApp.Droid
 			}
 			catch (Exception e)
 			{
-				AnalyticsHelpers.LogWarning("Error Getting User Account Keys", e.Message, e);
+				AnalyticsHelpers.Log("Error Getting User Account Keys", e.Message, e);
 			}
 
 			if (_username == null || _password == null)
@@ -87,7 +87,7 @@ namespace SimpleUITestApp.Droid
 			}
 			catch (Exception e)
 			{
-				AnalyticsHelpers.LogWarning("Username Not Found", e.Message, e);
+				AnalyticsHelpers.Log("Username Not Found", e.Message, e);
 			}
 
 			return username;

@@ -28,7 +28,7 @@ namespace SimpleUITestApp.Droid
 			}
 			catch (Exception e)
 			{
-				AnalyticsHelpers.LogWarning("Operating System Check Failed", e.Message, e);
+				AnalyticsHelpers.Log("Operating System Check Failed", e.Message, e);
 				return false;
 			}
 		}
