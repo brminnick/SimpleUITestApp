@@ -1,4 +1,3 @@
 # SimpleUITestApp
-This repo has been moved!
-
+This repo has moved:
 https://github.com/brminnick/SimpleUITestApp
